@@ -1,22 +1,20 @@
 import "./RiskMeter.css";
 import PointerIcon from "../../assets/svg-components/PointerIcon";
-import { useState } from "react";
 
 const RiskMeter = ({ percentage }) => {
-  const handlePercentageChange = (event) => {
-    setPercentage(event.target.value);
-  };
-
   return (
     <>
-      <div className="flex justify-between mb-4">
-        <p className="text text-xl font-bold">High</p>
-        <p className="text text-xl font-bold">Medium</p>
-        <p className="text text-xl font-bold">Low</p>
+      <div className="flex justify-between mb-4 text-xl font-bold">
+        <p>High</p>
+        <p>Medium</p>
+        <p>Low</p>
       </div>
-      <div className="risk-meter">
-        <div className="risk-meter-bar">
-          <div className="risk-meter-point" style={{ left: `${percentage}%` }}>
+      <div className="risk-meter h-11	w-full px-4 rounded-3xl">
+        <div className="relative">
+          <div
+            className=" absolute transition-all	 duration-500 ease-in-out"
+            style={{ left: `${percentage}%` }}
+          >
             <PointerIcon />
           </div>
         </div>

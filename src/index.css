@@ -3,6 +3,5 @@
 @tailwind utilities;
 
 body {
-  background-color: #ffffff;
   font-family: "IBM Plex Sans", sans-serif;
 }
