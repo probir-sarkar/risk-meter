@@ -2,7 +2,7 @@ import InfoIcon from "../../assets/svg-components/InfoIcon";
 import CheckMark from "../../assets/svg-components/CheckMark";
 import { useDispatch } from "react-redux";
 import { toggleCheck } from "../../redux/risk/riskSlice";
-
+import "./Card.scss";
 const Card = ({ item }) => {
   const dispatch = useDispatch();
   const { id, title, checked } = item;
@@ -24,7 +24,12 @@ const Card = ({ item }) => {
           <h3>{title}</h3>
         </div>
         <div className="card-box-info-icon absolute top-3 right-3 cursor-pointer">
-          <InfoIcon />
+          <div className="group">
+            <InfoIcon />
+            <span className="hidden absolute bg-gray-800/80 text-white p-2 rounded-md text-sm  -top-3 right-3 group-hover:block w-24">
+              More Info ...
+            </span>
+          </div>
         </div>
       </div>
     </>
